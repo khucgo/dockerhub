@@ -1,0 +1,10 @@
+FROM alpine:3.12
+LABEL version="20210316"
+
+RUN apk add --no-cache busybox-extras
+RUN apk add --no-cache curl
+RUN apk add --no-cache net-tools
+RUN apk add --no-cache openssl
+RUN apk add --no-cache tree
+
+ENTRYPOINT ["/bin/sh", "-c", "sleep inf"]
