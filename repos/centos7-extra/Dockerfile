@@ -1,5 +1,6 @@
 FROM centos:centos7
-RUN ["/bin/bash", "-c", "yum update -y"]
-RUN ["/bin/bash", "-c", "yum -y install less tree telnet"]
-RUN ["/bin/bash", "-c", "yum -y install net-tools iproute openssh-clients tcpdump"]
-ENTRYPOINT [ "/bin/bash", "-c", "sleep infinity" ]
+RUN yum update -y
+RUN yum -y install less tree telnet
+RUN yum -y install net-tools iproute openssh-clients tcpdump
+RUN curl -L https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-x86_64 -o /usr/bin/busybox && chmod +x /usr/bin/busybox
+ENTRYPOINT ["/bin/bash", "-c", "sleep infinity"]

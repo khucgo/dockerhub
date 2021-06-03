@@ -10,4 +10,4 @@ RUN ["/bin/bash", "-c", "yarn"]
 
 EXPOSE 8030
 
-ENTRYPOINT [ "/bin/bash", "-c", "yarn start" ]
+ENTRYPOINT ["/bin/bash", "-c", "yarn start"]
