@@ -1,5 +1,5 @@
-FROM alpine:3.12
-LABEL version="20210316"
+FROM alpine:3.13.6
+LABEL version="20211026"
 
 RUN apk add --no-cache busybox-extras
 RUN apk add --no-cache curl
