@@ -1,13 +1,14 @@
 #!/bin/sh
 
-echo $TA_EXECUTE
+echo "execute: $TA_EXECUTE"
+echo "ta execute $TA_EXECUTE || kill -9 8" > ta_exec.sh
 
-if [ -n "$TA_TIMEOUT" ]
-then
-  echo $TA_TIMEOUT
-  echo "timeout -k $TA_TIMEOUT $TA_TIMEOUT ta execute $TA_EXECUTE" > ta_exec.sh
+if [ -n "$TA_TIMEOUT" ]; then
+  echo "trigger and forget!"
+  echo "timeout: $TA_TIMEOUT"
+  sh ta_exec.sh&
+  sleep $TA_TIMEOUT
 else
-  echo "ta execute $TA_EXECUTE" > ta_exec.sh
+  echo "trigger and follow..."
+  sh ta_exec.sh
 fi
-
-sh ta_exec.sh
