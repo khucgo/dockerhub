@@ -1,0 +1,18 @@
+name: Docker Image CI - alpine-tools
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'repos/alpine-tools/**'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build ./repos/alpine-tools/ --file Dockerfile --tag khucgo/alpile-tools:$(date +%s)
