@@ -1,9 +1,9 @@
 name: alpine-tools
 
-on:
-  push:
-    branches: [ main ]
-    paths: [ "repos/alpine-tools/**" ]
+on: workflow_dispatch
+#   push:
+#     branches: [ main ]
+#     paths: [ "repos/alpine-tools/**" ]
 
 jobs:
 
