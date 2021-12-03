@@ -12,7 +12,8 @@ jobs:
       REPO_NAME: khucgo/alpile-tools
       REPO_TAG: ''
     steps:
-    - uses: actions/checkout@v2
+    - name: Check out repository
+      uses: actions/checkout@v2
     - name: Set the tag
       run: |
         export REPO_TAG=$(date +%Y%m%d)
