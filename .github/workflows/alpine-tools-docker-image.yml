@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build ./repos/alpine-tools/ --file Dockerfile --tag khucgo/alpile-tools:$(date +%s)
+      run: docker build ./repos/alpine-tools/ --tag khucgo/alpile-tools:$(date +%s)
